@@ -1,4 +1,4 @@
-#Бот для предоставление расписания преподавателей @Andromaradbot
+#Бот для предоставление расписания преподавателей - @Andromaradbot
 
 import asyncio
 import logging
