@@ -1,3 +1,5 @@
+#Бот для предоставление расписания преподавателей @Andromaradbot
+
 import asyncio
 import logging
 import sys
