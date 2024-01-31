@@ -34,19 +34,21 @@ def find_roots(arr):
     elif d > 0:
         x1 = (-arr[1] + d ** 0.5) / (2 * arr[0])
         x2 = (-arr[1] - d ** 0.5) / (2 * arr[0])
-        roots.append(x1)
-        roots.append(x2)
-
+        if x1 > 0:
+            roots.append(x1 ** 0.5)
+            roots.append(-(x1 ** 0.5))
+        if x2 > 0:
+            roots.append(x2 ** 0.5)
+            roots.append(-(x2 ** 0.5))
     return roots
 
 
 def main():
     params = get_params()
     roots = find_roots(params)
-    if len(roots) == 2:
-        print(f"X1 = {roots[0]}; X2 = {roots[1]}")
-    elif len(roots) == 1:
-        print(f"X = {roots[0]}")
+    if len(roots) >= 1:
+        for el in roots:
+            print("X = {:.6}".format(el))
     else:
         print("Корней нет")
 

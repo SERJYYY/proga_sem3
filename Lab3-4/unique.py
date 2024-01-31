@@ -5,7 +5,9 @@ class Unique(object):
         self.data = []
         if self.ignore_case:
             for el in items:
-                if el.lower() not in self.data:
+                if el not in self.data and type(el) is not str:
+                    self.data.append(el)
+                elif type(el) is str and el.lower() not in self.data:
                     self.data.append(el.lower())
         else:
             for el in items:
